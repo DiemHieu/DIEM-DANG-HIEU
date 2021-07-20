@@ -40,6 +40,7 @@
 15. **sudo : Khi dùng sudo, máy tính hiểu rằng bạn đang thực thi câu lệnh với quyền cao nhất.**
 - sudo shutdown -h now: tắt máy tính ngay lập tức.
 - sudo reboot : khởi động lại máy tính.
+- sudo 
 
 
 
