@@ -1,5 +1,0 @@
-## Training
-heeelllo
-
-fhfghg
-fgffhgh
