@@ -1,0 +1,48 @@
+[System]
+Name='Group23_Fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='bisector'
+
+[Input1]
+Name='x'
+Range=[0 70]
+NumMFs=3
+MF1='nhỏ':'trapmf',[-5 -5 5 10]
+MF2='trung_bình':'trapmf',[5 15 30 40]
+MF3='lớn':'trapmf',[35 60 72.9 96.2]
+
+[Input2]
+Name='y'
+Range=[0 4]
+NumMFs=3
+MF1='chậm':'gbellmf',[0.597883597883598 2.67 -5.55e-17]
+MF2='trung_bình':'gauss2mf',[0.257 0.905 0.278 1.76262710368779]
+MF3='nhanh':'gbellmf',[1.20862433862434 4.81 3.87]
+
+[Output1]
+Name='z'
+Range=[-40 0]
+NumMFs=3
+MF1='-lớn':'trimf',[-35 -35 -25]
+MF2='-trung_bình':'trimf',[-28 -18 -8]
+MF3='-nhỏ':'trimf',[-9 -4 0]
+
+[Rules]
+1 1, 3 (1) : 1
+2 2, 2 (1) : 1
+3 3, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
+2 1, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+1 -2, 3 (1) : 1
